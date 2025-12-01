@@ -1,0 +1,280 @@
+{
+  "info": {
+    "name": "Herrera Promotion API",
+    "description": "Colección completa de pruebas CRUD para la API de Promociones",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Crear Promoción",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Black Friday 2025\",\n  \"discountPercentage\": 50.00,\n  \"startDate\": \"2025-11-25\",\n  \"endDate\": \"2025-11-30\",\n  \"status\": \"ACTIVE\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/promotions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions"]
+        },
+        "description": "Crear una nueva promoción en el sistema"
+      },
+      "response": []
+    },
+    {
+      "name": "2. Crear Promoción - Cyber Monday",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Cyber Monday 2025\",\n  \"discountPercentage\": 40.00,\n  \"startDate\": \"2025-12-01\",\n  \"endDate\": \"2025-12-01\",\n  \"status\": \"ACTIVE\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/promotions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions"]
+        },
+        "description": "Crear otra promoción"
+      },
+      "response": []
+    },
+    {
+      "name": "3. Crear Promoción - Navidad",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Promoción Navidad\",\n  \"discountPercentage\": 30.00,\n  \"startDate\": \"2025-12-20\",\n  \"endDate\": \"2025-12-25\",\n  \"status\": \"PENDING\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/promotions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions"]
+        },
+        "description": "Crear promoción de Navidad"
+      },
+      "response": []
+    },
+    {
+      "name": "4. Listar Todas las Promociones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/promotions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions"]
+        },
+        "description": "Obtener todas las promociones del sistema"
+      },
+      "response": []
+    },
+    {
+      "name": "5. Buscar Promoción por ID (Exitoso)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/promotions/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions", "1"]
+        },
+        "description": "Buscar una promoción específica por su ID"
+      },
+      "response": []
+    },
+    {
+      "name": "6. Buscar Promoción por ID (No Encontrado)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/promotions/999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions", "999"]
+        },
+        "description": "Caso de error: buscar promoción que no existe"
+      },
+      "response": []
+    },
+    {
+      "name": "7. Actualizar Promoción (Exitoso)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Black Friday 2025 - EXTENDIDO\",\n  \"discountPercentage\": 60.00,\n  \"startDate\": \"2025-11-25\",\n  \"endDate\": \"2025-12-05\",\n  \"status\": \"ACTIVE\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/promotions/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions", "1"]
+        },
+        "description": "Actualizar una promoción existente"
+      },
+      "response": []
+    },
+    {
+      "name": "8. Actualizar Promoción (No Encontrado)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Promoción Inexistente\",\n  \"discountPercentage\": 10.00,\n  \"startDate\": \"2025-01-01\",\n  \"endDate\": \"2025-01-31\",\n  \"status\": \"INACTIVE\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/promotions/999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions", "999"]
+        },
+        "description": "Caso de error: intentar actualizar promoción que no existe"
+      },
+      "response": []
+    },
+    {
+      "name": "9. Cambiar Estado a INACTIVE",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Cyber Monday 2025\",\n  \"discountPercentage\": 40.00,\n  \"startDate\": \"2025-12-01\",\n  \"endDate\": \"2025-12-01\",\n  \"status\": \"INACTIVE\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/promotions/2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions", "2"]
+        },
+        "description": "Actualizar el estado de una promoción a INACTIVE"
+      },
+      "response": []
+    },
+    {
+      "name": "10. Eliminar Promoción (Exitoso)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/promotions/3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions", "3"]
+        },
+        "description": "Eliminar una promoción del sistema"
+      },
+      "response": []
+    },
+    {
+      "name": "11. Eliminar Promoción (No Encontrado)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/promotions/999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions", "999"]
+        },
+        "description": "Caso de error: intentar eliminar promoción que no existe"
+      },
+      "response": []
+    },
+    {
+      "name": "12. Crear Promoción con Datos Inválidos",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"\",\n  \"discountPercentage\": -10.00,\n  \"startDate\": \"2025-12-31\",\n  \"endDate\": \"2025-01-01\",\n  \"status\": \"\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/promotions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions"]
+        },
+        "description": "Prueba de validación: datos inválidos"
+      },
+      "response": []
+    },
+    {
+      "name": "13. Verificar Lista Final",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/promotions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "promotions"]
+        },
+        "description": "Verificar el estado final de todas las promociones"
+      },
+      "response": []
+    }
+  ]
+}
